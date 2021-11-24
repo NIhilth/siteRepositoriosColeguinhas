@@ -10,3 +10,17 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+li{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#linha{
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+#nome{
+    margin-right: 10px;
+}
