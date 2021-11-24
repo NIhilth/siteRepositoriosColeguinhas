@@ -22,6 +22,8 @@ const list = [
 ]
 
 
+
+
 function criarLinha(nome, userName) {
     let celulaNome = nome
     let celulaUsername = userName
@@ -38,9 +40,13 @@ function criarLinha(nome, userName) {
     userNamePessoa.innerText = "User name: " + celulaUsername
     linha.appendChild(userNamePessoa)
 
+    function irPraPagina() {
+        let nomeEscolhido = celulaUsername
+        location.href = "./userPages./index.html?" + nomeEscolhido;
+    }
     let botaoConta = document.createElement('button')
     botaoConta.innerText = "Ver informações de " + celulaUsername
-    botaoConta.onclick = 
+    botaoConta.onclick = irPraPagina
     linha.appendChild(botaoConta)
 
     return linha
@@ -59,27 +65,3 @@ function criarLista() {
 criarLista()
 
 
-
-
-function pegarUserGithub(userName) {
-    fetch('https://api.github.com/users/' + userName).then(function (resultado) {
-        resultado.json().then(function (data) {
-            console.log('Data:', data);
-        });
-    }).catch(function (erro) {
-        console.log('Bruno')
-        console.log("erro:", erro);
-    });
-
-}
-
-function pegarRepositorioGithub(userName) {
-    fetch('https://api.github.com/users/' + userName + '/repos').then(function (resultado) {
-        resultado.json().then(function (data) {
-            console.log('Data:', data);
-        });
-    }).catch(function (erro) {
-        console.log('Bruno')
-        console.log("erro:", erro);
-    });
-}
