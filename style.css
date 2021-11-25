@@ -4,11 +4,12 @@
 }
 
 body {
-    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-left: 15px;
+}
+
+#Lista{
+    margin-top: 15px;
 }
 
 li{
@@ -17,10 +18,158 @@ li{
 }
 
 #linha{
-    border-bottom: 1px solid black;
     padding-bottom: 5px;
 }
 
 #nome{
     margin-right: 10px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#botao {
+    position: absolute;
+    height: 20px;
+    margin-top: 50px;
+}
+
+@keyframes aparecer {
+    from {
+        background: transparent;
+    }
+
+    to {
+        background: rgb(128, 128, 128, 0.6);
+    }
+}
+
+.tela-modal {
+    position: absolute;
+    animation-duration: 3s;
+    animation-name: aparecer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(-500px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.container {
+    position: absolute;
+    top: 100px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    background-color: #fff;
+    width: 500px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.titulo {
+    font-size: 30px;
+    color: #000000;
+}
+
+.subtitulo {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.input {
+    width: 485px;
+    height: 20px;
+    outline: none;
+    border-radius: 15px;
+    padding: 2px 5px;
+    margin-top: 10px;
+}
+
+.input3 {
+    width: 485px;
+    height: 20px;
+    outline: none;
+    border-radius: 15px;
+    padding: 2px 5px;
+    margin-top: 10px;
+}
+
+.input2 {
+    padding: 2px 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.botao1 {
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.botao2 {
+    margin-top: 15px;
+    margin-right: 5px;
+    margin-left: 370px;
+}
+
+.alerta {
+    position: absolute;
+    left: 180px;
+    bottom: -50px;
+    background-color: #dd1414;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.concluido{
+    position: absolute;
+    bottom: 100px;
+    background-color: #35dd14;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+table{
+    position: absolute;
+    top: 100px;
+    border: 1px solid black;
+    width: 580px;
+    padding: 0px 10px;
+}
+
+tr{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7.5px;
+    margin-top: 7.5px;
+}
+
+td{
+    width: 140px;
+    height: 18px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+th{
+    text-align: center;
+    width: 140px;
+    height: 18px;
+}
+
+.botao_remover{
+    position: absolute;
+    right: -150px
 }
