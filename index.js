@@ -33,7 +33,7 @@ function criarLinha(nome, userName) {
     linha.id = "linha"
 
     let nomePessoa = document.createElement('div')
-    nomePessoa.id = "nome"
+    nomePessoa.className = "nomePessoa"
     nomePessoa.innerText = "Nome: " + celulaNome
     linha.appendChild(nomePessoa)
 
@@ -209,16 +209,19 @@ function criarLista() {
 }
 
 function funcaoFiltro() {
-    let filter = document.querySelector('input').value
-    let ul = document.getElementById("Lista");
-    let li = ul.getElementsByTagName('linha');
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.querySelector('.procurar');
+    filter = input.value.toUpperCase();
+    ul = document.querySelector("#Lista");
+    li = ul.getElementsByTagName('li');
 
-    for (i = 0; i < list.length; i++) {
-        let txtValue = list[i].nome;
-        if (txtValue.indexOf(filter) > -1) {
-            li.style.display = "";
+    for (i = 0; i < li.length; i++) {
+        a = li[i].querySelector(".nomePessoa");
+        txtValue = a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
         } else {
-            li.style.display = "none";
+            li[i].style.display = "none";
         }
     }
 }
