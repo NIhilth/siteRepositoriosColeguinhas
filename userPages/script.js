@@ -2,7 +2,7 @@ let userName = document.location.search
 let rightUserName = userName.substr(1, userName.length)
 
 function pegarUserGithub(userName) {
-    fetch('https://fake-github.herokuapp.com/api/' + userName).then(function (resultado) {
+    fetch('https://fake-github.herokuapp.com/api/search/' + userName).then(function (resultado) {
         resultado.json().then(function (data) {
             console.log('Data:', data);
         });
@@ -14,7 +14,7 @@ function pegarUserGithub(userName) {
 }
 
 function pegarRepositorioGithub(userName) {
-    fetch('https://fake-github.herokuapp.com/api/' + userName + '/repos').then(function (resultado) {
+    fetch('https://fake-github.herokuapp.com/api/search/' + userName + '/repos').then(function (resultado) {
         resultado.json().then(function (data) {
             console.log('Data:', data);
         });

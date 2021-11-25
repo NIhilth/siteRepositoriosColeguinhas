@@ -1,4 +1,5 @@
 let procurar = document.createElement('input')
+procurar.type = "text"
 procurar.className = "procurar"
 document.body.appendChild(procurar)
 
@@ -167,7 +168,7 @@ function abreModalCadastro() {
                 cadastroConcluido.innerText = "Cadastro feito com sucesso!"
                 corpo.appendChild(cadastroConcluido)
 
-                function excluiQuadrado(){
+                function excluiQuadrado() {
                     cadastroConcluido.remove()
                 }
 
@@ -188,7 +189,7 @@ function abreModalCadastro() {
 
 function criarLista() {
     let listAtual = document.querySelector('ul')
-    if(listAtual){
+    if (listAtual) {
         listAtual.remove()
     }
 
@@ -206,6 +207,24 @@ function criarLista() {
 
     document.body.appendChild(lista)
 }
+
+function funcaoFiltro() {
+    let filter = document.querySelector('input').value
+    ul = document.getElementById("Lista");
+    li = ul.getElementsByTagName('linha');
+
+    for (i = 0; i < list.length; i++) {
+        let a = list[i].getElementsByIdName("linha")[0];
+        let txtValue = a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+procurar.onkeyup = funcaoFiltro
 
 criarLista()
 
