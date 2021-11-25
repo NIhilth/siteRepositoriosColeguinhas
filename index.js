@@ -210,16 +210,15 @@ function criarLista() {
 
 function funcaoFiltro() {
     let filter = document.querySelector('input').value
-    ul = document.getElementById("Lista");
-    li = ul.getElementsByTagName('linha');
+    let ul = document.getElementById("Lista");
+    let li = ul.getElementsByTagName('linha');
 
     for (i = 0; i < list.length; i++) {
-        let a = list[i].getElementsByIdName("linha")[0];
-        let txtValue = a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+        let txtValue = list[i].nome;
+        if (txtValue.indexOf(filter) > -1) {
+            li.style.display = "";
         } else {
-            li[i].style.display = "none";
+            li.style.display = "none";
         }
     }
 }
