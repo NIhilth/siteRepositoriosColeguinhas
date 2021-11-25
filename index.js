@@ -1,4 +1,5 @@
 let procurar = document.createElement('input')
+procurar.className = "procurar"
 document.body.appendChild(procurar)
 
 const list = [
@@ -109,11 +110,11 @@ function criaModal(titulo, conteudo, rodape1, rodape2) {
 
     let tela = document.createElement('div')
     tela.className = "tela-modal"
-    corpo.appendChild(tela)
+    document.body.appendChild(tela)
 
     let modal = document.createElement('div');
     modal.className = "container";
-    corpo.appendChild(modal);
+    document.body.appendChild(modal);
 
     setTimeout(tela.style.backgroundColor = "rgb(128,128,128, 0.6)", 3000)
 
