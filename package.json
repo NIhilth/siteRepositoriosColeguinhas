@@ -4,7 +4,7 @@
   "description": "Site com o repositório de todo mundo",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
