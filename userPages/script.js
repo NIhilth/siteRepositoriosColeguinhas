@@ -1,6 +1,5 @@
 let userName = document.location.search
 let rightUserName = userName.substr(1, userName.length)
-let listReposName = []
 
 function pegarInfoGithub(userName) {
     fetch('https://fake-github.herokuapp.com/api/search/' + userName).then(function (resultado) {
@@ -11,7 +10,19 @@ function pegarInfoGithub(userName) {
                 login: data.login,
                 icon: data.avatar_url
             }
-            return info
+
+            const icone = document.createElement('img')
+            icone.src = info.icon
+            document.body.appendChild(icone)
+
+            const nomeUsuario = document.createElement('p')
+            nomeUsuario.innerText = "Nome do usuário: " + info.nome
+            document.body.appendChild(nomeUsuario)
+
+            const username = document.createElement('p')
+            username.innerText = "Nome de login: " + info.login
+            document.body.appendChild(username)
+
         });
     }).catch(function (erro) {
         console.log('Bruno')
@@ -23,10 +34,16 @@ function pegarReposGithub(userName) {
         resultado.json().then(function (repos) {
             console.log('Data:', repos);
             repos.forEach(function(e){
-                listReposName[e] = e.name
-            })
+                const linha = document.createElement('div')
+                linha.className = "linha-repositorios"
+                const linkRepo = document.createElement('a')
+                linkRepo.href = e.html_url
+                linkRepo.innerText = e.html_url
 
-            console.log(listReposName)
+                linha.innerText = "Nome de repositório: " + e.name + " Link do repositório: "
+                linha.appendChild(linkRepo)
+                document.body.appendChild(linha)
+            })
         });
     }).catch(function (erro) {
         console.log('Bruno')
@@ -35,18 +52,5 @@ function pegarReposGithub(userName) {
 }
 
 
-function pegarInformacao() {
-    let info = pegarInfoGithub(rightUserName)
-    let repos = pegarReposGithub(rightUserName)
-
-}
-
-function criarPagina() {
-    let container_imagem = document.createElement('div')
-    let container_nomes = document.createElement('div')
-    let container_reposritorios = document.createElement('div')
-
-
-}
-
-pegarInformacao()
+pegarInfoGithub(rightUserName)
+pegarReposGithub(rightUserName)

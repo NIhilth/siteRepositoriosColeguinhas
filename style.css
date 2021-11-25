@@ -177,3 +177,7 @@ th {
     position: absolute;
     right: -150px
 }
+
+.linha-repositorios{
+    display: flex;
+}
