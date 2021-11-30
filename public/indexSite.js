@@ -38,7 +38,7 @@ function criarLinha(nome, userName) {
     linha.appendChild(nomePessoa)
 
     let userNamePessoa = document.createElement('div')
-    userNamePessoa.id = "nome"
+    userNamePessoa.className = "nome"
     userNamePessoa.innerText = "User name: " + celulaUsername
     linha.appendChild(userNamePessoa)
 
@@ -208,7 +208,25 @@ function criarLista() {
     document.body.appendChild(lista)
 }
 
-function funcaoFiltro() {
+function funcaoFiltroNome() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.querySelector('.procurar');
+    filter = input.value.toUpperCase();
+    ul = document.querySelector("#Lista");
+    li = ul.getElementsByTagName('li');
+
+    for (i = 0; i < li.length; i++) {
+        a = li[i].querySelector(".nome");
+        txtValue = a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+function funcaoFiltroUsernome() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.querySelector('.procurar');
     filter = input.value.toUpperCase();
@@ -226,7 +244,9 @@ function funcaoFiltro() {
     }
 }
 
-procurar.onkeyup = funcaoFiltro
+procurar.onkeyup = funcaoFiltroNome
+
+procurar.onkeyup = funcaoFiltroUsernome
 
 criarLista()
 
