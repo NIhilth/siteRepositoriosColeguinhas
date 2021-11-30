@@ -44,7 +44,7 @@ function criarLinha(nome, userName) {
 
     function irPraPagina() {
         let nomeEscolhido = celulaUsername
-        location.href = "./public./userPages./Githubinfo.html?" + nomeEscolhido;
+        location.href = "./userPages./pageInfo.html?" + nomeEscolhido;
     }
 
     let botaoConta = document.createElement('button')
