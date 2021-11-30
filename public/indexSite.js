@@ -14,7 +14,7 @@ const list = [
     { nome: "Felipe Mielke Vieira", user: "FelipeMielkeVieira" },
     { nome: "Gustavo Rebelatto Zapella", user: "rebelattogustavo" },
     { nome: "Henrique Cole Fernandes", user: "HenriqueCole" },
-    { nome: "João Henrique Meirles da Silva", user: "nihilth" },
+    { nome: "João Henrique Meirles da Silva", user: "Nihilth" },
     { nome: "Kenzo Hideaky Ferreira Sato", user: "Kenzohfs" },
     { nome: "Leonardo Heitor Poglia", user: "leopoglia" },
     { nome: "Leonardo Giuseppe de Souza Rafaelli", user: "LeonardoRafaelli" },
