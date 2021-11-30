@@ -1,5 +1,10 @@
 let userName = document.location.search
 let rightUserName = userName.substr(1, userName.length)
+let user_Container = document.createElement('div')
+document.body.appendChild(user_Container)
+let user_Repo_Container = document.createElement('div')
+document.body.appendChild(user_Repo_Container)
+
 
 function pegarInfoGithub(userName) {
     fetch('https://fake-github.herokuapp.com/api/search/' + userName).then(function (resultado) {
@@ -13,15 +18,15 @@ function pegarInfoGithub(userName) {
 
             const icone = document.createElement('img')
             icone.src = info.icon
-            document.body.appendChild(icone)
+            user_Container.appendChild(icone)
 
             const nomeUsuario = document.createElement('p')
             nomeUsuario.innerText = "Nome do usuário: " + info.nome
-            document.body.appendChild(nomeUsuario)
+            user_Container.appendChild(nomeUsuario)
 
             const username = document.createElement('p')
             username.innerText = "Nome de login: " + info.login
-            document.body.appendChild(username)
+            user_Container.appendChild(username)
 
         });
     }).catch(function (erro) {
@@ -42,7 +47,7 @@ function pegarReposGithub(userName) {
 
                 linha.innerText = "Nome de repositório: " + e.name + " Link do repositório: "
                 linha.appendChild(linkRepo)
-                document.body.appendChild(linha)
+                user_Repo_Container.appendChild(linha)
             })
         });
     }).catch(function (erro) {
