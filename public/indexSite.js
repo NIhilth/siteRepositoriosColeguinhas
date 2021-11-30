@@ -244,9 +244,7 @@ function funcaoFiltroUsernome() {
     }
 }
 
-procurar.onkeyup = funcaoFiltroNome
-
-procurar.onkeyup = funcaoFiltroUsernome
+procurar.onkeyup = funcaoFiltroNome,funcaoFiltroUsernome
 
 criarLista()
 
